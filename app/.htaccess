@@ -1,0 +1,5 @@
+Order allow,deny
+Deny from all
+<FilesMatch "^wol\.php$">
+        Allow from all
+</FilesMatch>
