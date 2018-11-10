@@ -11,7 +11,7 @@
       "public-ip": "104.27.193.90",
       "mac-address": "5C:7D:B2:A3:6F:1E",
       "port": "1518",
-      "label": "Office PC"
+      "labels": "Office PC, Device two"
     }
 
   }

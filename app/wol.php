@@ -11,10 +11,14 @@ $config = json_decode($string, true);
 // I will just create config node clone for each "Label" entry I will find
 // This is just for convenience
 foreach ($config['devices'] as $key => $device) {
-    if(isset($device['label']) && $device['label']){
-        $label = sanitize($device['label']);
-        if (!isset($config['devices'][$label])){
-            $config['devices'][$label] = $device;
+    if(isset($device['labels']) && $device['labels']){
+        $labels_array = explode(",",$device['labels']);
+        foreach ($labels_array as $label) {
+            $label = sanitize($label);
+            if (!isset($config['devices'][$label])){
+                unset($device['labels']);
+                $config['devices'][$label] = $device;
+            }
         }
     }
 }
